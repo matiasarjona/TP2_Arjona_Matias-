@@ -1,0 +1,48 @@
+    1  sudo fdisk -l
+    2  ..
+    3  exit
+    4  #config.vm.box = "generic/rhel8"
+    5  #config.vm.box = "generic/rhel9"
+    6  config.vm.box = "ubuntu/jammy64"
+    7  fdisk -l
+    8  config.vm.box = "ubuntu/jammy64"
+    9  config.vm.synced_folder '.', '/home/vagrant/foo'
+   10  config.vm.hostname = "VMPruebas2"
+   11  sudo fdisk -l
+   12  sudo fdisk /dev/sdd
+   13  free
+   14  free -h
+   15  sudo mkswap /dev/sdd1
+   16  free -h
+   17  sudo swapon /dev/sdd1
+   18  free -h
+   19  swapon -s
+   20  cat /proc/swaps
+   21  sudo fdisk /dev/sdc 
+   22  sudo fdisk /dev/sdc
+   23  sudo wipefs -a/dev/sdc1
+   24  sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6 /dev/sdc1 /dev/sdc2
+   25  sudo pvs
+   26  sudo vgcreate vg_datos /dev/sdc1 /dev/sdd2 
+   27  sudo vgs
+   28  sudo pvs
+   29  sudo vgcreate vg_web /dev/sdc2
+   30  sudo pvs
+   31  sudo lvcreate -L 1G vg_web -n lv_web1
+   32  sudo lvcreate -L 512M vg_web -n lv_web2
+   33  sudo lvcreate -L 512M vg_web -n lv_web3
+   34  sudo lvs
+   35  sudo pvs
+   36  sudo fdisk -l
+   37  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1
+   38  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2
+   39  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3
+   40  exit
+   41  sudo fdisk -l /dev/sdd
+   42  exit
+   43  git clone https://github.com/matiasarjona/TP2_Arjona_Matias-.git
+   44  cd TP2_Arjona_Matias-/
+   45  sudo pvs > pvs.txt
+   46  sudo vgs > vgs.txt
+   47  sudo lvs > lvs.txt
+   48  history > historial_lvm.txt
